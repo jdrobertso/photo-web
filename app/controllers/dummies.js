@@ -8,7 +8,7 @@ export default Controller.extend({
   actions: {
     destroyDummy(id) {
       const store = this.get('store');
-      store.findRecord('dummy', id).then(dummy => { dummy.destroyRecord(); });
+      store.findRecord('dummy', id, { reload: true }).then(dummy => { dummy.destroyRecord(); });
     },
     updateDummy(id, name, number) {
       const store = this.get('store');
@@ -22,6 +22,8 @@ export default Controller.extend({
       const store = this.get('store');
       const dummy = store.createRecord('dummy', { name: name, number: number });
       dummy.save();
+      this.set('name', null);
+      this.set('number', null);
     }
   }
 });
