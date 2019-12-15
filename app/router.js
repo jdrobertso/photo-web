@@ -7,7 +7,9 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('dummies', { path: '/' });
+  this.route('user');
+  this.route('albums');
+  this.route('pictures');
 });
 
 export default Router;
