@@ -2,6 +2,8 @@
 
 module.exports = function(environment) {
   let ENV = {
+    apiNamespace: 'api',
+    apiUrl: 'http://localhost:3000',
     modulePrefix: 'photo-web',
     environment,
     rootURL: '/',
